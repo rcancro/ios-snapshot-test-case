@@ -21,16 +21,19 @@ let package = Package(
     targets: [
         .target(
             name: "iOSSnapshotTestCase",
-            dependencies: ["iOSSnapshotTestCaseCore"]
+            dependencies: ["iOSSnapshotTestCaseCore"],
+            path: "src/iOSSnapshotTestCase"
         ),
         .target(
             name: "iOSSnapshotTestCaseCore",
+            path: "src/iOSSnapshotTestCaseCore",
             exclude: ["Resources/FBSnapshotTestCase-Info.plist"],
             publicHeadersPath: "Public"
         ),
         .testTarget(
             name: "iOSSnapshotTestCaseTests",
             dependencies: ["iOSSnapshotTestCase"],
+            path: "src/iOSSnapshotTestCaseTests",
             exclude: ["BUILD.bazel"],
             resources: [.process("Resources")]
         ),
