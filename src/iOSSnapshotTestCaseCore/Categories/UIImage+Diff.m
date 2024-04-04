@@ -39,7 +39,7 @@
 - (UIImage *)fb_diffWithImage:(UIImage *)image
 {
     if (!image) {
-        return nil;
+        return [[UIImage alloc] init];
     }
     CGSize imageSize = CGSizeMake(MAX(self.size.width, image.size.width), MAX(self.size.height, image.size.height));
     UIGraphicsBeginImageContextWithOptions(imageSize, YES, 0);
